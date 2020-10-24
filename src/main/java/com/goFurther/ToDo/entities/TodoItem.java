@@ -5,7 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.time.Instant;
-import java.time.LocalDate;
 
 @Entity
 public class TodoItem {
@@ -16,13 +15,13 @@ public class TodoItem {
     private int id;
 
     @Column(name="created_at")
-    private Instant created_at = Instant.now();
+    private final Instant created_at = Instant.now();
 
     @Column(name="content")
     private String content;
 
     @Column(name="is_done")
-    private boolean isDone;
+    private boolean done;
 
     public String getContent() {
         return content;
@@ -32,11 +31,19 @@ public class TodoItem {
         this.content = content;
     }
 
-    public boolean isDone() {
-        return isDone;
+    public boolean getDone() {
+        return done;
     }
 
     public void setDone(boolean done) {
-        isDone = done;
+        this.done = done;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public Instant getCreated_at() {
+        return created_at;
     }
 }
