@@ -56,7 +56,7 @@ public class TodoItemService {
         myItem.setDone(otherValues.getDone());
         myItem.setContent(otherValues.getContent());
 
-        this.removeById(id);
+//        this.removeById(id);
         return this.saveTodoItem(myItem);
     }
 

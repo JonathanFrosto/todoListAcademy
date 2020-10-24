@@ -49,7 +49,7 @@ public class TodoItemController {
     @PutMapping("/update/{id}")
     public ResponseEntity<TodoItem> updateItemById(@PathVariable int id, @RequestBody TodoItem newItem){
         TodoItem newObj = todoItemService.updateItem(id, newItem);
-        return ResponseEntity.ok(newItem);
+        return ResponseEntity.ok(newObj);
     }
 
     @GetMapping("/{id}/description")
